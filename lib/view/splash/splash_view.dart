@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:movies_app/view/auth/login_view.dart';
 import '../../layout/home_layout.dart';
 
 class SplashView extends StatefulWidget {
@@ -17,7 +18,7 @@ class _SplashViewState extends State<SplashView> {
     Timer(
       const Duration(seconds: 2),
           () {
-        Navigator.pushReplacementNamed(context, HomeLayout.routeName);
+        Navigator.pushReplacementNamed(context, LoginScreen.routeName);
       },
     );
     super.initState();

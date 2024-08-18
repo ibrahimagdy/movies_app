@@ -20,7 +20,7 @@ class ApplicationTheme {
     ),
     colorScheme: ColorScheme.fromSeed(
       seedColor: const Color(0xffB5B4B4),
-      primary: const Color(0xffB5B4B4),
+      primary: const Color(0xffFFB224),
       secondary: Colors.white,
       //background: const Color(0xff121312),
     ),
@@ -39,6 +39,12 @@ class ApplicationTheme {
       ),
       bodyLarge: TextStyle(
         color: Colors.white,
+        fontFamily: 'Inter',
+        fontSize: 14,
+        fontWeight: FontWeight.w600,
+      ),
+      bodyMedium: TextStyle(
+        color: Color(0xffFFB224),
         fontFamily: 'Inter',
         fontSize: 14,
         fontWeight: FontWeight.w600,

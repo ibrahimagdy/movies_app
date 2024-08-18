@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import '../../core/constants.dart';
 import '../../core/network_layer/api_manger.dart';
 import '../../model/details_model.dart';
@@ -21,42 +20,6 @@ class HomeViewModel extends ChangeNotifier {
   List<MovieModel> get recommendMovies => _recommendMovies;
 
   List<MovieModel> get similarMovies => _similarMovies;
-
-  Future<void> toggleFavorite(MovieModel movie) async {
-    movie.isFavorite = !movie.isFavorite!;
-    await _saveFavorites();
-    notifyListeners();
-  }
-
-  Future<void> _saveFavorites() async {
-    final prefs = await SharedPreferences.getInstance();
-    List<String> favoriteMovieIds = _popularMovies
-        .where((movie) => movie.isFavorite == true)
-        .map((movie) => movie.id.toString())
-        .toList();
-    prefs.setStringList('favoriteMovies', favoriteMovieIds);
-  }
-
-  Future<void> _loadFavorites() async {
-    final prefs = await SharedPreferences.getInstance();
-    List<String>? favoriteMovieIds =
-        prefs.getStringList('favoriteMovies') ?? [];
-
-    for (var movie in _popularMovies) {
-      if (favoriteMovieIds.contains(movie.id.toString())) {
-        movie.isFavorite = true;
-      } else {
-        movie.isFavorite = false;
-      }
-    }
-    notifyListeners();
-  }
-
-  // Call this method when initializing the HomeViewModel
-  Future<void> init() async {
-    await getPopularMovies();
-    await _loadFavorites();
-  }
 
   getPopularMovies() async {
     try {

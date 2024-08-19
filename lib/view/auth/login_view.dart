@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:movies_app/view/auth/register_screen.dart';
+import 'package:movies_app/view/auth/widgets/custom_button.dart';
 import 'package:movies_app/view/auth/widgets/custom_text_form_field.dart';
 
 import '../../core/services/snackbar_service.dart';
@@ -110,29 +111,13 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       const SizedBox(height: 40),
-                      GestureDetector(
+                      CustomButton(
+                        txt: 'Login',
                         onTap: (){
-                          login();
+                          if(formKey.currentState!.validate()){
+                            login();
+                          }
                         },
-                        child: Container(
-                          height: 55,
-                          width: double.infinity,
-                          margin: const EdgeInsets.symmetric(horizontal: 30),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(16),
-                            color: theme.primaryColor,
-                          ),
-                          child: const Center(
-                            child: Text(
-                              'Login',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
-                              ),
-                            ),
-                          ),
-                        ),
                       ),
                       const SizedBox(height: 13),
                       Row(

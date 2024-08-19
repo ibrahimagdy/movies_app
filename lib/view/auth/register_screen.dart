@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:movies_app/view/auth/widgets/custom_button.dart';
 import 'package:movies_app/view/auth/widgets/custom_text_form_field.dart';
 
 import '../../core/services/snackbar_service.dart';
@@ -171,16 +172,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         },
                         suffixIcon: GestureDetector(
                           onTap: () {
-                            confirmPasswordVisable =
-                            !confirmPasswordVisable;
+                            confirmPasswordVisable = !confirmPasswordVisable;
                             setState(() {});
                           },
                           child: Padding(
                             padding: const EdgeInsets.only(right: 8),
                             child: Text(
-                              confirmPasswordVisable == true
-                                  ? "View"
-                                  : "Hide",
+                              confirmPasswordVisable == true ? "View" : "Hide",
                               style: TextStyle(
                                   color: theme.primaryColor,
                                   fontSize: 13,
@@ -194,8 +192,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         children: [
                           Text(
                             "By selecting agree and continue below,",
-                            style: theme.textTheme.labelMedium!.copyWith(
-                                color: Colors.white, fontSize: 12),
+                            style: theme.textTheme.labelMedium!
+                                .copyWith(color: Colors.white, fontSize: 12),
                           ),
                         ],
                       ),
@@ -204,26 +202,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           Text(
                             "I agree to Terms of service and privacy policy",
                             style: theme.textTheme.labelMedium!.copyWith(
-                                color: theme.primaryColor,
-                                fontSize: 12),
+                                color: theme.primaryColor, fontSize: 12),
                           ),
                         ],
                       ),
                       const SizedBox(height: 23),
-                      ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: theme.primaryColor,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)),
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 60, vertical: 14),
-                        ),
-                        onPressed: () {
-                          register();
+                      CustomButton(
+                        txt: 'Agree and Continue',
+                        onTap: () {
+                          if(formKey.currentState!.validate()){
+                            register();
+                          }
                         },
-                        child: Text("Agree and Continue",
-                            style: theme.textTheme.bodySmall!.copyWith(
-                                color: Colors.white, fontSize: 18)),
                       ),
                     ],
                   ),

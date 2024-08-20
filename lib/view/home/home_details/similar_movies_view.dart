@@ -4,9 +4,9 @@ import 'package:provider/provider.dart';
 import '../home_view_model.dart';
 
 class SimilarMoviesView extends StatelessWidget {
-  HomeViewModel vm;
+  final HomeViewModel vm;
 
-  SimilarMoviesView({
+  const SimilarMoviesView({
     super.key,
     required this.vm,
   });

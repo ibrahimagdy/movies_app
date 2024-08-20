@@ -5,11 +5,17 @@ import '../../../core/constants.dart';
 import '../../../model/movie_model.dart';
 import '../home_view_model.dart';
 
-class HomeDetailsView extends StatelessWidget {
+class HomeDetailsView extends StatefulWidget {
   static String routeName = "home details";
-  HomeViewModel vm = HomeViewModel();
 
-  HomeDetailsView({super.key});
+  const HomeDetailsView({super.key});
+
+  @override
+  State<HomeDetailsView> createState() => _HomeDetailsViewState();
+}
+
+class _HomeDetailsViewState extends State<HomeDetailsView> {
+  HomeViewModel vm = HomeViewModel();
 
   @override
   Widget build(BuildContext context) {

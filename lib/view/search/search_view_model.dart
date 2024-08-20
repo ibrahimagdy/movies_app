@@ -12,10 +12,6 @@ class SearchViewModel extends ChangeNotifier {
 
   List<MovieModel> get movies => _movies;
 
-  // SearchViewModel() {
-  //   Constants.getFavoriteMovies();
-  // }
-
   changeSearchQuery(String query) {
     _searchQuery = query;
     notifyListeners();
@@ -42,12 +38,4 @@ class SearchViewModel extends ChangeNotifier {
       print(e.toString());
     }
   }
-
-  // bookmarkButtonPressed(MovieModel model) async {
-  //   model.isFavorite = !(model.isFavorite!);
-  //   (model.isFavorite!)
-  //       ? FireStoreUtils.addDataToFirestore(model)
-  //       : FireStoreUtils.deleteDataFromFirestore(model.id!);
-  //   notifyListeners();
-  // }
 }

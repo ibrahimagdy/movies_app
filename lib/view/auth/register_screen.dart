@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:movies_app/view/auth/widgets/custom_button.dart';
 import 'package:movies_app/view/auth/widgets/custom_text_form_field.dart';
-
 import '../../core/services/snackbar_service.dart';
-import 'login_view.dart';
 
 class RegisterScreen extends StatefulWidget {
   static const String routeName = "Register";
@@ -27,7 +25,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var mediaQuery = MediaQuery.of(context).size;
     var theme = Theme.of(context);
     return Scaffold(
       backgroundColor: theme.scaffoldBackgroundColor,

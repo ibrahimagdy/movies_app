@@ -76,7 +76,7 @@ class SearchMovieItem extends StatelessWidget {
                                 "${model.voteAverage}",
                                 style: const TextStyle(
                                     color:
-                                    Colors.white), // Adjust style as needed
+                                    Colors.white),
                               ),
                             ],
                           ),
@@ -84,7 +84,7 @@ class SearchMovieItem extends StatelessWidget {
                             Constants.getMovieReleaseYear(model.releaseDate!),
                             style: const TextStyle(
                               color: Color(0XFFB5B4B4),
-                            ), // Adjust style as needed
+                            ),
                           ),
                         ],
                       ),

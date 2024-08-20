@@ -12,10 +12,6 @@ class BrowseViewModel extends ChangeNotifier {
 
   List<MovieModel> get movies => _movies;
 
-  // BrowseViewModel() {
-  //   Constants.getFavoriteMovies();
-  // }
-
   getGenres() async {
     try {
       var response = await ApiManager.fetchCategories();
@@ -47,12 +43,4 @@ class BrowseViewModel extends ChangeNotifier {
       print(e.toString());
     }
   }
-
-  // bookmarkButtonPressed(MovieModel model) async {
-  //   model.isFavorite = !(model.isFavorite!);
-  //   (model.isFavorite!)
-  //       ? FireStoreUtils.addDataToFirestore(model)
-  //       : FireStoreUtils.deleteDataFromFirestore(model.id!);
-  //   notifyListeners();
-  // }
 }

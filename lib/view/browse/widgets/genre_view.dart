@@ -5,11 +5,16 @@ import '../../home/home_details/home_details_view.dart';
 import '../browse_view_model.dart';
 import 'genre_movie_item.dart';
 
-class GenreView extends StatelessWidget {
+class GenreView extends StatefulWidget {
   static const String routeName = 'genre-view';
 
-  GenreView({super.key});
+  const GenreView({super.key});
 
+  @override
+  State<GenreView> createState() => _GenreViewState();
+}
+
+class _GenreViewState extends State<GenreView> {
   var vm = BrowseViewModel();
 
   @override

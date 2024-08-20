@@ -17,7 +17,6 @@ class _SearchViewState extends State<SearchView> {
 
   @override
   Widget build(BuildContext context) {
-    var theme = Theme.of(context);
     return ChangeNotifierProvider(
       create: (context) => vm,
       builder: (context, child) {
